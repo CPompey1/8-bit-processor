@@ -1,3 +1,3 @@
 # CSE490
 
-## This is the project 1 branch
+## Project 1 branch
