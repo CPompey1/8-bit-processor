@@ -22,7 +22,6 @@
 
 module instruction_memory(read_address, writedata, instruction);
   input wire[7:0] read_address; // declare read_address as an 8-bit input
-  input wire writedata;			// declare writedata as a 1-bit input
   output reg[7:0] instruction;	// declare instruction as an 8-bit output
     
   /* */
