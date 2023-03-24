@@ -6,7 +6,7 @@ module multiplexor(input1,input2,selector,output1);
   input selector;
   output [7:0] output1;
   reg [7:0] output1;
-initial
+  always @(input1||input2||selector)
   begin
     if (selector == 0)
       begin

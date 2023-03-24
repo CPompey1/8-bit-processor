@@ -1,9 +1,13 @@
 // Code your design here
-module programCounter(instructionAddress,outputInstructionAddress);
+module programCounter(instructionAddress,currentInstructionAddress,nextInputInstructionAddress);
   
   input [7:0] instructionAddress;
-  output [7:0] outputInstructionAddress;
+  output [7:0] currentInstructionAddress,nextInputInstructionAddress;
+  reg currentInstructionAddress,nextInputInstructionAddress;
   
-  assign outputInstructionAddress = instructionAddress;
-  
+  always @(instructionAddress)
+    begin
+      	assign currentInstructionAddress = instructionAddress;
+  		assign nextInputInstructionAddress = instructionAddress + 1;
+    end
 endmodule
