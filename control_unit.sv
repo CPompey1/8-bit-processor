@@ -12,7 +12,7 @@
 
 module control_unit(InputBits, RegWrite, ALUop, ALUsrc, MemRead, MemWrite, MemToReg);
  
-  input [7:0] InputBits; // There are total of 8 bits but we only care about 3 bits which is [7:5]
+ input [7:5] InputBits; // There are total of 8 bits but we only care about 3 bits which is [7:5]
   
   output reg RegWrite, ALUop, ALUsrc, MemRead, MemWrite, MemToReg; // control signals that is used 
   																   // for each instruction 
