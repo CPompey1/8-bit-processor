@@ -3,12 +3,9 @@
 | Name of program: CSE 490 Project 1
 | Author: Caroline Hart
 | Date Created: 03/21/2023
-| Date last updated: 03/23/2023
+| Date last updated: 03/2/2023
 | Function: Data Memory
-| Method: ( brief description how the program works )
-| Additional Comments: ( Note anything you think important )
 \****************************************************************/
-`define MAX_MEM_SIZE 256
 
 
 module data_memory(address, write_data, memwrite, data_out);
@@ -20,10 +17,8 @@ module data_memory(address, write_data, memwrite, data_out);
   /* Initialize variable for data memory. Max memory size is 256 bytes, so array has size of 8-bits per entry times 256 possible memory addresses*/
   reg[7:0] data_memory[255:0];
   
-  /* Initialize index counter */
-  integer i;
+  /* Initialize variable for file */
   integer file;
-  
   
   /* The always statement runs whenever the inputs are updated */ 
   always @(address[7:0])
@@ -31,36 +26,31 @@ module data_memory(address, write_data, memwrite, data_out);
       /* initialize data_memory from text file */
       $readmemb("data_memory.txt", data_memory); // This needs to be continuously updated, which is why I put it within the always statement
       
-      // moved fopen out of the if statement for debug/testing purposes
-
-      
       /* if memwrite control bit is 1, we are writing to the data memory */
       if (memwrite == 1'b1) begin
         /* Write the contents of write_data to memory at address.
          * Data_out need not be updated since we are not reading from memory */ 
          
         file = $fopen("data_memory.txt","w");	// open the file in write mode
+        /* according to https://www.chipverify.com/verilog/verilog-file-io-operations,
+         * opening a file in write mode (assuming the file exists) will:
+         * 		truncate the file to zero length and overwrite it. 
+         * Since the file contents will effectively be deleted, we must rewrite the 
+         * entire contents of the file each time a write operation occurs */
 
-        //         if (file) $display("file opened successfully"); // DEBUG
-        //         else $display("an error occurred when opening the file"); // DEBUG
-        
-        i = $fseek(file, address, 0); // set position in file to the input address
-        $display("Position in file: ", $ftell(file)); // ftell returns offset in number of bytes
-
-        $fdisplay(file, "%8b", write_data[7:0]);
-        // the only difference between fwrite and fdisplay is that fdisplay adds the newline char to the end of the string
-		
+        data_memory[address] = write_data;
+        for(int i=0; i<256; i++)begin
+          $fdisplayb(file, data_memory[i]);
+        end
+  
+      	$fclose(file);	// close the file
       end
-
 
       /* if memwrite control bit is 0, we are reading from the data memory */
       else begin
         assign data_out = data_memory[address];
         /* Read the contents of memory at address and update data_out to reflect 
          * memory that was read. Ignore input write_data since we are reading from memory. */
-      end // endelse
-      
-      // moved fclose out of if statement for debug/testing purposes
-      $fclose(file);	// close the file
+      end  
     end
 endmodule
