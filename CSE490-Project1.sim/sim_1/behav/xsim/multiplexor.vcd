@@ -1,0 +1,71 @@
+$date
+   Wed Mar 29 15:46:56 2023
+$end
+$version
+  2019.2
+$end
+$timescale
+  1ps
+$end
+$scope module multiplexor_8_tb $end
+$var reg 8 ! input1 [7:0] $end
+$var reg 8 " input2 [7:0] $end
+$var reg 1 # selector $end
+$var wire 8 $ output1 [7:0] $end
+$scope module instName $end
+$var wire 8 % input1 [7:0] $end
+$var wire 8 & input2 [7:0] $end
+$var wire 1 ' selector $end
+$var reg 8 ( output1 [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 !
+b0 "
+0#
+b0 $
+b0 %
+b0 &
+0'
+b0 (
+$end
+#5000
+b0 !
+b0 "
+#10000
+b10100 !
+b1010 "
+1#
+b1010 $
+b10100 %
+b1010 &
+1'
+b1010 (
+#15000
+b1010 !
+b10100 "
+0#
+b1010 %
+b10100 &
+0'
+b1010 (
+#20000
+b10001100 !
+b11101 "
+1#
+b11101 $
+b10001100 %
+b11101 &
+1'
+b11101 (
+#25000
+b0 !
+b0 "
+0#
+b0 $
+b0 %
+b0 &
+0'
+b0 (
