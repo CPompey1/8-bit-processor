@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Mon Mar 27 19:46:13 2023
+| Date         : Wed Mar 29 18:12:49 2023
 | Host         : timberlake.cse.buffalo.edu running 64-bit CentOS Linux release 7.9.2009 (Core)
 | Command      : report_utilization -file alu_8_tb_utilization_synth.rpt -pb alu_8_tb_utilization_synth.pb
 | Design       : alu_8_tb
