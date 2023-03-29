@@ -12,14 +12,14 @@
 
 module control_unit(InputBits, RegWrite, ALUop, ALUsrc, MemRead, MemWrite, MemToReg);
  
- input [7:5] InputBits; // There are total of 8 bits but we only care about 3 bits which is [7:5]
+ input [2:0] InputBits; // There are total of 8 bits but we only care about 3 bits which is [7:5]
   
   output reg RegWrite, ALUop, ALUsrc, MemRead, MemWrite, MemToReg; // control signals that is used 
   																   // for each instruction 
   
   always @ (InputBits) // repeatedly check the input bits for all the conditions below
     begin
-      if (InputBits[7:5] == 3'b000) // for add, opcode = 000, R-type
+      if (InputBits[2:0] == 3'b000) // for add, opcode = 000, R-type
         begin
           RegWrite <= 1; // in add, writes to register  
           ALUop <= 0;	 // not use
@@ -29,7 +29,7 @@ module control_unit(InputBits, RegWrite, ALUop, ALUsrc, MemRead, MemWrite, MemTo
           MemToReg <= 0; // not use
         end
       
-      else if (InputBits[7:5] == 3'b100) // for addi, opcode = 100, I-type
+      else if (InputBits[2:0] == 3'b100) // for addi, opcode = 100, I-type
         begin
           RegWrite <= 1; // addi writes to register
           ALUop <= 0;    // not use
@@ -39,7 +39,7 @@ module control_unit(InputBits, RegWrite, ALUop, ALUsrc, MemRead, MemWrite, MemTo
           MemToReg <= 0; // not use
         end 
       
-      else if (InputBits[7:5] == 3'b101)	// for sw, opcode = 101, I-type
+      else if (InputBits[2:0] == 3'b101)	// for sw, opcode = 101, I-type
         begin
           RegWrite <= 0; // not use	
           ALUop <= 0;    // not use
@@ -49,7 +49,7 @@ module control_unit(InputBits, RegWrite, ALUop, ALUsrc, MemRead, MemWrite, MemTo
           MemToReg <= 1; // in sw, memory to register is applied
         end 
       	
-      else if (InputBits[7:5] == 3'b110)	// for lw, opcode = 110, I-type
+      else if (InputBits[2:0] == 3'b110)	// for lw, opcode = 110, I-type
         begin
           RegWrite <= 0; // not use
           ALUop <= 0;    // not use
@@ -59,7 +59,7 @@ module control_unit(InputBits, RegWrite, ALUop, ALUsrc, MemRead, MemWrite, MemTo
           MemToReg <= 1; // in lw, memory to register is applied
         end 
       
-      else if (InputBits[7:5] == 3'b111)	// for sll, opcode = 111, R-type
+      else if (InputBits[2:0] == 3'b111)	// for sll, opcode = 111, R-type
         begin
           RegWrite <= 1; // sll write to register
           ALUop <= 0;	 // not use
