@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/cendue/cipompey/CSE490-Project1/CSE490-Project1.runs/synth_1'
+HD_PWD='/home/cendue/cmhart2/Documents/Sixth Year UB 2022-23/Spring 2023/CSE490/CSE490/CSE490-Project1.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
