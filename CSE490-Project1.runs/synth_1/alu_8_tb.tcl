@@ -28,6 +28,10 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo {/home/cendue/cmhart2/Documents/Sixth Year UB 2022-23/Spring 2023/CSE490/CSE490/CSE490-Project1.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
+read_mem {
+  {/home/cendue/cmhart2/Documents/Sixth Year UB 2022-23/Spring 2023/CSE490/CSE490/CSE490-Project1.srcs/sources_1/new/instruction_memory.txt}
+  {/home/cendue/cmhart2/Documents/Sixth Year UB 2022-23/Spring 2023/CSE490/CSE490/CSE490-Project1.srcs/sources_1/new/data_memory.txt}
+}
 read_verilog -library xil_defaultlib {
   {/home/cendue/cmhart2/Documents/Sixth Year UB 2022-23/Spring 2023/CSE490/CSE490/CSE490-Project1.srcs/sources_1/new/Alu_8.v}
   {/home/cendue/cmhart2/Documents/Sixth Year UB 2022-23/Spring 2023/CSE490/CSE490/CSE490-Project1.srcs/sources_1/new/Alu_8_tb.v}

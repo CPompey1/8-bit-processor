@@ -29,7 +29,7 @@ module instruction_memory(read_address, instruction);
   reg [7:0] instr_mem [255:0];
 
   /* Initialize memory addresses & corresponding instructions from .txt files */
-  initial $readmemb("instruction_mem.txt", instr_mem);
+  initial $readmemb("instruction_memory.txt", instr_mem);
   
   
   /* The always statement runs whenever the inputs are updated */ 
