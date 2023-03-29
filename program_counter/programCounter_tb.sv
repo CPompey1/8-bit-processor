@@ -4,7 +4,7 @@ module t_programCounter;
   reg [7:0]instructionAddress;
   wire [7:0]currentInstructionAddress,nextInputInstructionAddress;
   
-  programCounter instName(.instructionAddress(instructionAddress),.currentInstructionAddress(currentInstructionAddress),.nextInputInstructionAddress(nextInputInstructionAddress));
+  programCounter instName(.instructionAddress(instructionAddress),.currentInstructionAddress(currentInstructionAddress));
   
   initial
     begin
@@ -34,8 +34,8 @@ module t_programCounter;
   
   initial
     begin
-      $display("InputAddress\tCurrentAddress\tNextAddress");
-      $monitor("%b\t%b\t%b",instructionAddress,currentInstructionAddress,nextInputInstructionAddress);
+      $display("InputAddress\tCurrentAddress");
+      $monitor("%b\t%b",instructionAddress,currentInstructionAddress);
     end  
   
       //make sure it ends
