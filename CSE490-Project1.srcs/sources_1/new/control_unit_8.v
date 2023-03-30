@@ -1,4 +1,3 @@
-
 /* ***************************************************************\
 | Name of program: control_unit
 | Author: U Shin
@@ -22,52 +21,48 @@ module control_unit(InputBits, RegWrite, ALUop, ALUsrc, MemWrite, MemToReg);
     begin
       if (InputBits[2:0] == 3'b000) // for add, opcode = 000, R-type
         begin
-          RegWrite <= 1; // in add, writes to register  
-          ALUop <= 0;	 // not use
-          ALUsrc <= 0; 	 // not use
+          RegWrite = 1; // in add, writes to register  
+          ALUop = 0;	 // not use
+          ALUsrc = 0; 	 // not use
           //MemRead <= 0;  // not use
-          MemWrite <= 0; // not use
-          MemToReg <= 0; // not use
+          MemWrite = 0; // not use
+          MemToReg = 0; // not use
         end
       
       else if (InputBits[2:0] == 3'b100) // for addi, opcode = 100, I-type
         begin
-          RegWrite <= 1; // addi writes to register
-          ALUop <= 0;    // not use
-          ALUsrc <= 1;	 // addi goes into the ALU source
-          //MemRead <= 0;  // not use
-          MemWrite <= 0; // not use
-          MemToReg <= 0; // not use
+          RegWrite = 1; // addi writes to register
+          ALUop = 0;    // not use
+          ALUsrc = 1;	 // addi goes into the ALU source
+          MemWrite = 0; // not use
+          MemToReg = 0; // not use
         end 
       
       else if (InputBits[2:0] == 3'b101)	// for sw, opcode = 101, I-type
         begin
-          RegWrite <= 0; // not use	
-          ALUop <= 0;    // not use
-          ALUsrc <= 1;	 // sw goes into the ALU source 
-          //MemRead <= 0;  // not use
-          MemWrite <= 1; // sw writes to memory
-          MemToReg <= 1; // in sw, memory to register is applied
+          RegWrite = 0; // not use	
+          ALUop = 0;    // not use
+          ALUsrc = 1;	 // sw goes into the ALU source 
+          MemWrite = 1; // sw writes to memory
+          MemToReg = 1; // in sw, memory to register is applied
         end 
       	
       else if (InputBits[2:0] == 3'b110)	// for lw, opcode = 110, I-type
         begin
-          RegWrite <= 0; // not use
-          ALUop <= 0;    // not use
-          ALUsrc <= 1;	 // lw goes into the ALU source
-          //MemRead <= 1;	 // lw have to read from memory 
-          MemWrite <= 0; // not use
-          MemToReg <= 1; // in lw, memory to register is applied
+          RegWrite = 0; // not use
+          ALUop = 0;    // not use
+          ALUsrc = 1;	 // lw goes into the ALU source
+          MemWrite = 0; // not use
+          MemToReg = 1; // in lw, memory to register is applied
         end 
       
       else if (InputBits[2:0] == 3'b111)	// for sll, opcode = 111, R-type
         begin
-          RegWrite <= 1; // sll write to register
-          ALUop <= 0;	 // not use
-          ALUsrc <= 1;	 // in sll, it goes into the ALU source
-          //MemRead <= 0;  // not use
-          MemWrite <= 0; // not use
-          MemToReg <= 0; // not use
+          RegWrite = 1; // sll write to register
+          ALUop = 0;	 // not use
+          ALUsrc = 1;	 // in sll, it goes into the ALU source
+          MemWrite = 0; // not use
+          MemToReg = 0; // not use
         end 
   	end
         
