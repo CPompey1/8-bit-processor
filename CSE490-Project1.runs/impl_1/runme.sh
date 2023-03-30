@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/cendue/cipompey/CSE490/CSE490-Project1.runs/synth_1'
+HD_PWD='/home/cendue/cipompey/CSE490/CSE490-Project1.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -36,4 +36,8 @@ EAStep()
      fi
 }
 
-EAStep vivado -log alu_8_tb.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source alu_8_tb.tcl
+# pre-commands:
+/bin/touch .init_design.begin.rst
+EAStep vivado -log alu_8_tb.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source alu_8_tb.tcl -notrace
+
+
