@@ -10,11 +10,10 @@
 \****************************************************************/
 
 
-module data_memory(address, write_data, memwrite, data_out);
-  input wire[7:0] address;		// 8-bit address to read from/write to
-  input wire[7:0] write_data;	// 8-bit data to be written to memory
-  input wire memwrite;			// 1-bit control to tell us if we are writing or reading
-  output reg[7:0] data_out;		// 8-bit data that was read from memory
+module data_memory(input wire[7:0] address, 
+                   input wire[7:0] write_data, 
+                   input wire memwrite, 
+                   output reg[7:0]data_out);
   
   /* Initialize variable for data memory. Max memory size is 256 bytes, so array has size of 8-bits per entry times 256 possible memory addresses*/
   reg[7:0] data_memory[255:0];
@@ -59,7 +58,7 @@ module data_memory(address, write_data, memwrite, data_out);
 
       /* if memwrite control bit is 0, we are reading from the data memory */
       else begin
-        assign data_out = data_memory[address];
+         data_out = data_memory[address];
         /* Read the contents of memory at address and update data_out to reflect 
          * memory that was read. Ignore input write_data since we are reading from memory. */
       end

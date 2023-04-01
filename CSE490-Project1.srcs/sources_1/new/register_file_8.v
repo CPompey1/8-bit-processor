@@ -45,6 +45,8 @@ module register_file_8(input rd,
     //if its a register  write operation
     if (regWrite) begin 
       registerList[rd] = writeData;
+      outData1 = registerList[rd];
+      outData0 = registerList[rs];
 
      //Else its a register read operation 
     end else begin 

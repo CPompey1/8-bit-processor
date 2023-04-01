@@ -10,14 +10,11 @@
 
 `timescale 10ns/100ps
 
-module sign_extension(output [7:0] extended_bits, input [2:0] input_bits);
+module sign_extension(output reg [7:0] extended_bits, input [2:0] input_bits);
 
-  reg [7:0] extended_bits;	  // Setting extended 8 bits as register, output in this case
-  wire [2:0] input_bits; 	  // Setting inputs 3 bits as wire since it has to be used continuously
-  
   always @ (input_bits) // constant checking for input bits
     begin
-      extended_bits[7:0] <= input_bits[2:0]; // looking at the 3rd bit, checking if 1 which negative or 0 which is positive
+      extended_bits[7:0] = input_bits[2:0]; // looking at the 3rd bit, checking if 1 which negative or 0 which is positive
   	end
         
 endmodule

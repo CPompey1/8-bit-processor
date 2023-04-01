@@ -20,17 +20,22 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 // Code your design here
-module mips_cpu_8;
+module mips_cpu_8(output wire   [7:0] aluResult,
+                  output wire   [7:0] mem_data_out,
+                  output wire   [7:0] pc_to_instr_mem,
+                  output wire   [7:0] instruction,
+                  output wire   [7:0] readData1,
+                  output wire   [7:0] readData2);
   
   wire [7:0] adder_to_pc, pc_to_instr_mem, 	instruction, readData1, readData2, aluResult, writeRegData, writeMemData,signExtend_out,alu_src_mux_out,mem_data_out;
   
   wire [2:0] controlOp, signExtend_in;
   
-  wire regWrite, memWrite, aluOp, aluSrc, memToReg,rd,rs,_;
+  wire regWrite, memWrite, aluOp, aluSrc, memToReg,rs,rd_;
   
   
-  supply0 gnd;
-  supply1 vcc;
+//  supply0 gnd;
+//  supply1 vcc;
   
   
   //Instatiating modules
@@ -38,10 +43,10 @@ module mips_cpu_8;
                         .currentInstructionAddress(pc_to_instr_mem));
   
   Alu_8 adder (.a(pc_to_instr_mem),
-               .b(8'b1),
+               .b(8'b00000000),
                .out(adder_to_pc),
                .cout(_),	
-               .aluOp(gnd)
+               .aluOp(0)
     			);
   
   instruction_memory instru_mem (.read_address(pc_to_instr_mem),
@@ -62,7 +67,7 @@ module mips_cpu_8;
                              .MemToReg(memToReg));
 	
   sign_extension sign_extension(.extended_bits(signExtend_out), 
-                                .input_bits(signExtend_in));
+                                .input_bits(instruction[2:0]));
   
   multiplexor aluSrcMux (.input1(readData2),
                          .input2(signExtend_out),
@@ -73,8 +78,6 @@ module mips_cpu_8;
                          .input2(mem_data_out),
                          .selector(memToReg), 
                          .output1(writeRegData));
-  
-  
   
   Alu_8 alu (.a(readData1),
              .b(alu_src_mux_out),

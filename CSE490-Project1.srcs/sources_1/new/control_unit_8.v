@@ -12,11 +12,11 @@
 `timescale 10ns/100ps
 
 module control_unit(input [2:0] InputBits, 
-                    output RegWrite, 
-                    output ALUop, 
-                    output ALUsrc, 
-                    output MemWrite, 
-                    output MemToReg);
+                    output reg RegWrite, 
+                    output reg ALUop, 
+                    output reg ALUsrc, 
+                    output reg MemWrite, 
+                    output reg MemToReg);
   																   // for each instruction 
   
   always @ (InputBits) // repeatedly check the input bits for all the conditions below
