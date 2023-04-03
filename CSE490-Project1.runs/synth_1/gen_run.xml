@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1680132623">
-  <File Type="VDS-TIMING-PB" Name="alu_8_tb_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="alu_8_tb_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="alu_8_tb.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="alu_8_tb_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="alu_8_tb_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="alu_8_tb_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="alu_8_tb.vds"/>
-  <File Type="REPORTS-TCL" Name="alu_8_tb_reports.tcl"/>
-  <File Type="PA-TCL" Name="alu_8_tb.tcl"/>
-  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1680386207">
+  <File Type="PA-TCL" Name="mips_cpu_8.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="mips_cpu_8_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="mips_cpu_8_reports.tcl"/>
+  <File Type="RDS-RDS" Name="mips_cpu_8.vds"/>
+  <File Type="RDS-UTIL" Name="mips_cpu_8_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="mips_cpu_8_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="mips_cpu_8.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="mips_cpu_8_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="mips_cpu_8_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/Alu_8.v">
       <FileInfo>
@@ -18,7 +18,21 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/Alu_8_tb.v">
+    <File Path="$PSRCDIR/sources_1/new/control_unit_8.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/data_memory.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/instruction_memory.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -27,7 +41,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/multiplexor.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -35,55 +48,27 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/program_counter.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/program_counter_tb.v">
+    <File Path="$PSRCDIR/sources_1/new/register_file_8.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/multiplexor_8_tb.v">
+    <File Path="$PSRCDIR/sources_1/new/sign_extension_8.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/instruction_memory.v">
+    <File Path="$PSRCDIR/sources_1/new/mips_cpu_8.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/instruction_memory_tb.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/data_memory.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/data_memory_tb.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -103,7 +88,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="alu_8_tb"/>
+      <Option Name="TopModule" Val="mips_cpu_8"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>

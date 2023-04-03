@@ -1,5 +1,22 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/cendue/kylelemm/CSE490/CSE490-Project1.srcs/sources_1/new/program_counter.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/cpomp/workspace/work_sub/CSE490/CSE490-Project1.srcs/sources_1/new/Alu_8.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Alu_8
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/cpomp/workspace/work_sub/CSE490/CSE490-Project1.srcs/sources_1/new/control_unit_8.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module control_unit
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/cpomp/workspace/work_sub/CSE490/CSE490-Project1.srcs/sources_1/new/data_memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_memory
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/cpomp/workspace/work_sub/CSE490/CSE490-Project1.srcs/sources_1/new/instruction_memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module instruction_memory
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/cpomp/workspace/work_sub/CSE490/CSE490-Project1.srcs/sources_1/new/multiplexor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module multiplexor
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/cpomp/workspace/work_sub/CSE490/CSE490-Project1.srcs/sources_1/new/program_counter.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module program_counter
-WARNING: [VRFC 10-3676] redeclaration of ansi port 'currentInstructionAddress' is not allowed [/home/cendue/kylelemm/CSE490/CSE490-Project1.srcs/sources_1/new/program_counter.v:28]
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/cendue/kylelemm/CSE490/CSE490-Project1.srcs/sources_1/new/program_counter_tb.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module program_counter_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/cpomp/workspace/work_sub/CSE490/CSE490-Project1.srcs/sources_1/new/register_file_8.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module register_file_8
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/cpomp/workspace/work_sub/CSE490/CSE490-Project1.srcs/sources_1/new/sign_extension_8.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sign_extension
+WARNING: [VRFC 10-9336] redeclaration of ANSI port 'extended_bits' is not allowed [C:/Users/cpomp/workspace/work_sub/CSE490/CSE490-Project1.srcs/sources_1/new/sign_extension_8.v:15]
+WARNING: [VRFC 10-9336] redeclaration of ANSI port 'input_bits' is not allowed [C:/Users/cpomp/workspace/work_sub/CSE490/CSE490-Project1.srcs/sources_1/new/sign_extension_8.v:16]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/cpomp/workspace/work_sub/CSE490/CSE490-Project1.srcs/sources_1/new/mips_cpu_8.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mips_cpu_8
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/cpomp/workspace/work_sub/CSE490/CSE490-Project1.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

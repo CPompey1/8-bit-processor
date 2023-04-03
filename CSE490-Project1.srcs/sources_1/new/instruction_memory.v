@@ -36,7 +36,7 @@ module instruction_memory(read_address, instruction);
   always @(read_address)
     begin
       /* Set instruction(output) equal to the contents of instruction memory at index read_address(input)*/
-      assign instruction = instr_mem[read_address];
+       instruction = instr_mem[read_address];
     end
   
 endmodule
