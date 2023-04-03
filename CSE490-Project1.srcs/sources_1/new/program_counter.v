@@ -22,13 +22,12 @@
 
 module program_counter(
     input [7:0] instructionAddress,
-    output [7:0] currentInstructionAddress
+    output reg [7:0] currentInstructionAddress
     );
     
-  reg [7:0] currentInstructionAddress;
   
   always @(instructionAddress)
     begin
-      	assign currentInstructionAddress = instructionAddress;
+      currentInstructionAddress = instructionAddress;
     end
 endmodule

@@ -1,11 +1,14 @@
-0.6
-2019.2
-Nov  6 2019
-21:42:20
-/home/cendue/kylelemm/CSE490/CSE490-Project1.sim/sim_1/behav/xsim/glbl.v,1573089660,verilog,,,,glbl,,,,,,,,
-/home/cendue/kylelemm/CSE490/CSE490-Project1.srcs/sources_1/new/Alu_8.v,1680108928,verilog,,/home/cendue/kylelemm/CSE490/CSE490-Project1.srcs/sources_1/new/Alu_8_tb.v,,Alu_8,,,,,,,,
-/home/cendue/kylelemm/CSE490/CSE490-Project1.srcs/sources_1/new/Alu_8_tb.v,1680108928,verilog,,,,alu_8_tb,,,,,,,,
-/home/cendue/kylelemm/CSE490/CSE490-Project1.srcs/sources_1/new/multiplexor.v,1680115815,verilog,,/home/cendue/kylelemm/CSE490/CSE490-Project1.srcs/sources_1/new/multiplexor_8_tb.v,,multiplexor,,,,,,,,
-/home/cendue/kylelemm/CSE490/CSE490-Project1.srcs/sources_1/new/multiplexor_8_tb.v,1680119185,verilog,,,,multiplexor_8_tb,,,,,,,,
-/home/cendue/kylelemm/CSE490/CSE490-Project1.srcs/sources_1/new/program_counter.v,1680119352,verilog,,/home/cendue/kylelemm/CSE490/CSE490-Project1.srcs/sources_1/new/program_counter_tb.v,,program_counter,,,,,,,,
-/home/cendue/kylelemm/CSE490/CSE490-Project1.srcs/sources_1/new/program_counter_tb.v,1680118903,verilog,,,,program_counter_tb,,,,,,,,
+0.7
+2020.2
+Oct 14 2022
+05:20:55
+C:/Users/cpomp/workspace/work_sub/CSE490/CSE490-Project1.sim/sim_1/behav/xsim/glbl.v,1680381475,verilog,,,,glbl,,,,,,,,
+C:/Users/cpomp/workspace/work_sub/CSE490/CSE490-Project1.srcs/sources_1/new/Alu_8.v,1680381477,verilog,,C:/Users/cpomp/workspace/work_sub/CSE490/CSE490-Project1.srcs/sources_1/new/control_unit_8.v,,Alu_8,,,,,,,,
+C:/Users/cpomp/workspace/work_sub/CSE490/CSE490-Project1.srcs/sources_1/new/control_unit_8.v,1680381624,verilog,,C:/Users/cpomp/workspace/work_sub/CSE490/CSE490-Project1.srcs/sources_1/new/data_memory.v,,control_unit,,,,,,,,
+C:/Users/cpomp/workspace/work_sub/CSE490/CSE490-Project1.srcs/sources_1/new/data_memory.v,1680382182,verilog,,C:/Users/cpomp/workspace/work_sub/CSE490/CSE490-Project1.srcs/sources_1/new/instruction_memory.v,,data_memory,,,,,,,,
+C:/Users/cpomp/workspace/work_sub/CSE490/CSE490-Project1.srcs/sources_1/new/instruction_memory.v,1680382039,verilog,,C:/Users/cpomp/workspace/work_sub/CSE490/CSE490-Project1.srcs/sources_1/new/multiplexor.v,,instruction_memory,,,,,,,,
+C:/Users/cpomp/workspace/work_sub/CSE490/CSE490-Project1.srcs/sources_1/new/mips_cpu_8.v,1680381488,verilog,,,,mips_cpu_8,,,,,,,,
+C:/Users/cpomp/workspace/work_sub/CSE490/CSE490-Project1.srcs/sources_1/new/multiplexor.v,1680382089,verilog,,C:/Users/cpomp/workspace/work_sub/CSE490/CSE490-Project1.srcs/sources_1/new/program_counter.v,,multiplexor,,,,,,,,
+C:/Users/cpomp/workspace/work_sub/CSE490/CSE490-Project1.srcs/sources_1/new/program_counter.v,1680381962,verilog,,C:/Users/cpomp/workspace/work_sub/CSE490/CSE490-Project1.srcs/sources_1/new/register_file_8.v,,program_counter,,,,,,,,
+C:/Users/cpomp/workspace/work_sub/CSE490/CSE490-Project1.srcs/sources_1/new/register_file_8.v,1680381488,verilog,,C:/Users/cpomp/workspace/work_sub/CSE490/CSE490-Project1.srcs/sources_1/new/sign_extension_8.v,,register_file_8,,,,,,,,
+C:/Users/cpomp/workspace/work_sub/CSE490/CSE490-Project1.srcs/sources_1/new/sign_extension_8.v,1680381488,verilog,,C:/Users/cpomp/workspace/work_sub/CSE490/CSE490-Project1.srcs/sources_1/new/mips_cpu_8.v,,sign_extension,,,,,,,,
