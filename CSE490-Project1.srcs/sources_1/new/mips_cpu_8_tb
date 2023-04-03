@@ -1,0 +1,44 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 04/03/2023 02:52:29 PM
+// Design Name: 
+// Module Name: tb_cpu_8
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module tb_cpu_8();
+wire [7:0] aluResult;
+wire [7:0] mem_data_out;
+wire [7:0] pc_to_instr_mem;
+wire [7:0] instruction;
+wire [7:0] readData1;
+wire [7:0] readData2;
+
+
+mips_cpu_8 DUT (.aluResult(aluResult),
+                .mem_data_out(mem_data_out),
+                .pc_to_instr_mem(pc_to_instr_mem),
+                .instruction(instruction),
+                .readData1(readData1),
+                .readData2(readData2));
+
+always @ (pc_to_instr_mem) begin
+    $monitor("instruction: %b, aluResult/datamem addr: %d, instruction address: %b, memory_output: %d, registerOutput1: %b, registerOutput2: %b",
+    instruction, aluResult, pc_to_instr, mem_data_out, readData1, readData2);
+    
+end
+endmodule
